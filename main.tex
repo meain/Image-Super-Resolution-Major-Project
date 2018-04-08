@@ -1,0 +1,54 @@
+\documentclass[12pt,b5paper]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx} % embed images
+\graphicspath{ {images/} }
+\usepackage{url} %for proper url entries
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\newcommand\HRule{\rule{\textwidth}{1pt}}
+
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+
+\begin{document}
+
+\renewcommand\bibname{References} %Renames "Bibliography" to "References" on ref page
+\pagenumbering{gobble}
+
+\input{./cover}
+\newpage
+\input{./acknowledgement}
+\newpage
+\input{./decleration.tex}
+\newpage
+\input{./abstract}
+
+\pagenumbering{roman} %numbering before main content starts
+\tableofcontents
+\listoffigures
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Image Super-resolution}
+\lhead{}
+\rfoot{Page \thepage}
+\lfoot{Department of Computer Science and Engineering}
+
+\newpage
+\pagenumbering{arabic} %reset numbering to normal for the main content
+
+\input{./introduction}
+\input{./literature_survey}
+\input{./feasibility_study}
+\input{./problem_statement}
+\input{./system_study}
+\input{./system_requirements}
+\input{./work_progress}
+\input{./conclusion}
+\input{./references}
+
+\end{document}
