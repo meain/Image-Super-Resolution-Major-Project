@@ -1,0 +1,22 @@
+\chapter{Module description}
+
+The project can be essentially split into 3 main parts.
+
+\begin{itemize}
+\item Frontend module
+\item Backend module
+\item Image super resolution module
+\end{itemize}
+
+\section{Frontend module}
+
+The frontend is the visual component of the system. It is the interface that the user will be interacting with. It will provide the user with a way to upload an image to the backend. It is also responsible for displaying the result of the image that has been worked on using the super resolution model once that is received back from the backend.
+When a user uploads an image, the frontend encode it into base64 encoding and passes it over to the backend server. Once the image is received from the backend the frontend will parse it back from base64 to image and display in the UI.
+
+\section{Backend module}
+
+It is the API server. It serves as the glue code between the fronted and the Image super resolution model. It work be interacting with both of them. When a user uploads an image, it decodes the image from base64 and write it to an image file. This file is what the Image super resolution module reads. Not once the Image super resolution model is done with processing the image it then passes the image back to the backend. This image that is obtained from the Image super resolution model is then passed encoded into base64 encoding and sent back to the frotend.
+
+
+\section{Image super resolution module}
+It is the core of the system. This module does all the heavy lifting in this system. This is the part of the system that will do the actual transformation of the lower resolution image to the higher resolution image. It makes use of a \textbf{Deep Denoiseing Super Resolution (DDSRCNN)} model in order to do the same. It takes an image that has been written to disk by the backend, process it by initially cleaning it up then working on it using \textbf{Deep Denoiseing Super Resolution (DDSRCNN)} model. The processed image is then written back to the backend.

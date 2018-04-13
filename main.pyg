@@ -1,0 +1,11 @@
+public class Fibonacci {
+
+  // The golden ratio $\phi = \frac{1 + \sqrt{5}}{2}$.
+  public static final double PHI = (1.0 + Math.sqrt(5.0)) / 2.0;
+
+  public static double fibonacci(long n) {
+    if (n &lt; 0) throw new IllegalArgumentException();
+    return Math.floor(Math.pow(PHI, n) / Math.sqrt(5.0) + 0.5);
+  }
+
+}
