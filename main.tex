@@ -13,6 +13,27 @@
 \usepackage{color}
 \usepackage[utf8]{inputenc}
 \usepackage{float}
+\usepackage{minted}
+\usepackage{listings}
+\lstset{
+         basicstyle=\footnotesize\ttfamily, 
+         numberstyle=\tiny,          
+         numbersep=5pt,             
+         tabsize=2,                
+         extendedchars=true,      
+         breaklines=true,        
+         showspaces=false,      
+         showtabs=false,       
+         xleftmargin=17pt,
+         framexleftmargin=17pt,
+         framexrightmargin=5pt,
+         framexbottommargin=4pt,
+         showstringspaces=false 
+ }
+ \lstloadlanguages{
+         python,
+         javascript
+ }
 
 \begin{document}
 
@@ -43,12 +64,17 @@
 
 \input{./introduction}
 \input{./literature_survey}
-\input{./feasibility_study}
+% \input{./feasibility_study}
 \input{./problem_statement}
 \input{./system_study}
+\input{./module_desc}
+\input{./tech_used}
+\input{./implementation}
 \input{./system_requirements}
-\input{./work_progress}
+% \input{./work_progress}
+\input{./future_work}
 \input{./conclusion}
 \input{./references}
+\input{./appendices}
 
 \end{document}

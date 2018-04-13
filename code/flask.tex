@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1]
+\PY{k+kn}{from} \PY{n+nn}{flask} \PY{k+kn}{import} \PY{n}{Flask}
+\PY{n}{app} \PY{o}{=} \PY{n}{Flask}\PY{p}{(}\PY{n+nv+vm}{\PYZus{}\PYZus{}name\PYZus{}\PYZus{}}\PY{p}{)}
+ 
+\PY{n+nd}{@app.route}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{/}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{k}{def} \PY{n+nf}{ping}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{up}\PY{l+s+s2}{\PYZdq{}}
+
+\PY{n+nd}{@app.route}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{/image\PYZus{}process}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{methods}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{GET}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{POST}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+\PY{k}{def} \PY{n+nf}{parse\PYZus{}request}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+    \PY{n}{data} \PY{o}{=} \PY{n}{request}\PY{o}{.}\PY{n}{data}
+    \PY{n}{processed\PYZus{}image\PYZus{}string} \PY{o}{=} \PY{n}{process\PYZus{}image}\PY{p}{(}\PY{n}{data}\PY{p}{)}
+    \PY{k}{return} \PY{n}{processed\PYZus{}image\PYZus{}string}
+ 
+\PY{k}{if} \PY{n+nv+vm}{\PYZus{}\PYZus{}name\PYZus{}\PYZus{}} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZus{}\PYZus{}main\PYZus{}\PYZus{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+    \PY{n}{app}\PY{o}{.}\PY{n}{run}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
